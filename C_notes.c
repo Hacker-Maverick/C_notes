@@ -363,3 +363,76 @@ void string(){
                             when mismatched it subtacts 2nd string char from first 
                             if thier alternate code difference is positive returns positve no. else negative 
 */
+
+// Structures
+/*
+struct datatype_name{           [making structure]
+    int var1;
+    char var2;
+    float var3;
+};
+
+struct datatype_name varname;           [defining variable]
+varname.var1 = 37;                      [assigning values]
+varname.var2 = 'h';
+varname.var3 = 98.6;
+
+    Array of structures
+struct datatype_name varname[100];
+varname[0].var1 = 67;
+
+    Pointers to structures
+struct datatype_name *ptr;
+ptr = &varname;
+
+printf("%d", *(ptr).var1);          [using structure pointer to print]
+
+*(ptr).var1 can also be written by arrow operator ptr->var1 
+
+    Passing structure to function
+void fn(struct datatype_name var1){...}
+
+    Typedef keyword
+typedef struct datatype_name{ ... } datatype_alias ;    [we can use the alias anywhere directly]
+*/
+
+// File I/O
+/*
+FILE* pointer_name;                               [Syntax of File Pointer]
+pointer_name = fopen("filename.txt", "mode");     [Opening a file]
+
+    Functions of File handling
+fopen()     fopen("filename.txt", "mode");       It is used to create a file or to open a file.
+fclose()    fclose(pointer_name);               It is used to close a file.
+fgets()     fgets(char_array_name, array_size, stdin);        It is used to read a file.  
+fputs()     fputs(string to be written, pointer_name);        Prints the whole line in the file and a newline at the end.
+fprintf()   fprintf(pointer_name ," ... ", variables);        It is used to write blocks of data into a file.
+fscanf()    fscanf(pointer_name, " format specifiers ", variable)       It is used to read blocks of data from a file.
+fseek()     fseek(pointer_name, position, start_position);          It is used to set the position of a file pointer to a mentioned location.
+ftell()     ftell(pointer_name);            It is used to return the current position of a file pointer.
+rewind()    rewind(pointer_name);           It is used to set the file pointer to the beginning of a file.
+
+NOTE:
+modes :         r	Searches file. If the file is opened successfully fopen( ) loads it into memory and sets up a pointer that points to the first character in it. If the file cannot be opened fopen( ) returns NULL.
+                rb	 Open for reading in binary mode. If the file does not exist, fopen( ) returns NULL.
+                w	Open for writing in text mode. If the file exists, its contents are overwritten. If the file doesn’t exist, a new file is created. Returns NULL, if unable to open the file.
+                wb	Open for writing in binary mode. If the file exists, its contents are overwritten. If the file does not exist, it will be created.
+                a	Searches file. If the file is opened successfully fopen( ) loads it into memory and sets up a pointer that points to the last character in it. It opens only in the append mode. If the file doesn’t exist, a new file is created. Returns NULL, if unable to open the file.
+                ab	 Open for append in binary mode. Data is added to the end of the file. If the file does not exist, it will be created.
+
+start_position :    SEEK_END: It denotes the end of the file.
+                    SEEK_SET: It denotes starting of the file.
+                    SEEK_CUR: It denotes the file pointer’s current position. 
+
+*/
+
+// Dynamic memory allocation
+/*
+C program allows us to use memory dynamically using pointers.
+
+int* ptr;
+ptr = (int*)malloc(size);               uses a single argument for defining size and just allocates a bunch of memory with garbage values in them.
+ptr = (int*)calloc(n, element-size);    Uses two arguments namely number of blocks and element size, it assigns as well as initializes with 0.
+ptr = realloc(ptr, newSize);            Reallocated extra heap of memory, works as malloc.
+free(ptr);                              Free the memory spaces.
+*/
